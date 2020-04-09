@@ -1,0 +1,31 @@
+@{
+ViewData["Title"] = "FileBrowser";
+}
+
+<div id="fileExplorer">
+    @foreach (var fileInfo in ViewBag.fileInfos)
+    {
+    <div class="thumbnail">
+        <img src="~/uploads/@fileInfo.Name" alt="thumb" title="fileInfo.Name" width="120" height="100">
+        <br />
+        @fileInfo.Name
+    </div>
+    }
+</div>
+
+@section Scripts
+{
+<script>
+    $(document).ready(function () {
+    var funcNum = @(Context.Request.Query["CKEditorFuncNum"] + ";")
+    $('#fileExplorer').on('click', 'img', function () {
+        var fileUrl = '/uploads/' + $(this).attr('title');
+        window.opener.CKEDITOR.tools.callFunction(funcNum, fileUrl);
+        window.close();
+    }).hover(function () {
+        $(this).css('cursor', 'pointer');
+    });
+    });
+    });
+</script>
+}

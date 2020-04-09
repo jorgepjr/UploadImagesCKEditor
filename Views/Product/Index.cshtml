@@ -1,0 +1,33 @@
+@{
+ViewData["Title"] = "Index";
+
+
+}
+
+<textarea id="textareaContent">CKEditor4</textarea>
+<br/>
+<textarea id="editor">CKEditor5</textarea>
+
+@section Scripts
+{
+ <script>
+     ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script> 
+ 
+ <script>
+    $(document).ready(function () {
+        CKEDITOR.replace('textareaContent', {
+            height: 400,
+            filebrowserUploadUrl: '/Product/UploadCkEditor',
+            filebrowserBrowseUrl: '/Product/FileBrowse'
+        });
+    });
+</script>
+}
