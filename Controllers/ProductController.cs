@@ -9,11 +9,11 @@ namespace UploadDeImagens.Controllers
 {
     public class ProductController : Controller
     {
-        private IHostingEnvironment hostingEnvironment;
+        private IWebHostEnvironment webHostEnvironment;
 
-        public ProductController(IHostingEnvironment hostingEnvironment)
+        public ProductController(IWebHostEnvironment webHostEnvironment)
         {
-            this.hostingEnvironment = hostingEnvironment;
+            this.webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -26,7 +26,7 @@ namespace UploadDeImagens.Controllers
         {
             var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + upload.FileName;
             var path = Path.Combine(Directory.GetCurrentDirectory(),
-            hostingEnvironment.WebRootPath, "uploads", fileName);
+            webHostEnvironment.WebRootPath, "uploads", fileName);
 
             var stream = new FileStream(path, FileMode.Create);
 
@@ -38,7 +38,7 @@ namespace UploadDeImagens.Controllers
         public IActionResult FileBrowse()
         {
             var dir = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(),
-            hostingEnvironment.WebRootPath, "uploads"));
+            webHostEnvironment.WebRootPath, "uploads"));
             ViewBag.fileInfos = dir.GetFiles();
            return View(nameof(FileBrowse));
         }
