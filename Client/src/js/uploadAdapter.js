@@ -1,3 +1,5 @@
+const ACTIONUPLOADIMAGE = 'Product/UploadCkEditor';
+
 export default class UploadAdapter {
     constructor( loader ) {
         // The file loader instance to use during the upload.
@@ -29,7 +31,7 @@ export default class UploadAdapter {
         // integration to choose the right communication channel. This example uses
         // a POST request with JSON as a data structure but your configuration
         // could be different.
-        xhr.open( 'POST', 'http://example.com/image/upload/path', true );
+        xhr.open( 'POST', ACTIONUPLOADIMAGE, true );
         xhr.responseType = 'json';
     }
 
