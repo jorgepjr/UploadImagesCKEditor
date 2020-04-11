@@ -7,6 +7,7 @@ module.exports = {
         bootstrap: './src/js/bootstrap.js',
         index: './src/js/index.js',
         validation: './src/js/validation.js',
+        ckeditor: './src/js/ckeditor.js',
     },
     output: {
         filename: '[name].entry.js',
