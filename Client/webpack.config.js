@@ -5,7 +5,6 @@ module.exports = {
     entry: {
         site: './src/js/site.js',
         bootstrap: './src/js/bootstrap.js',
-        index: './src/js/index.js',
         validation: './src/js/validation.js',
         ckeditor: './src/js/ckeditor.js',
     },

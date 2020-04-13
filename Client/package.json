@@ -5,7 +5,6 @@
   "license": "MIT",
   "dependencies": {
     "@ckeditor/ckeditor5-build-decoupled-document": "^18.0.0",
-    "@ckeditor/ckeditor5-upload": "^18.0.0",
     "bootstrap": "^4.4.1",
     "css-loader": "^3.5.2",
     "jquery": "^3.4.1",
